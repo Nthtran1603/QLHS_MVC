@@ -1,0 +1,72 @@
+﻿
+
+@model HocSinhViewModel
+
+@{
+}
+
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            <p class="mt-0 mb-2 fw-semibold text-dark font-18 text-center">@ViewBag.RenderedHtmlTitle</p>
+            <form asp-action="AddOrEdit" asp-controller="HocSinh" asp-route-id="@Model.maHS">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div>
+                    <div class="form-group mb-2">
+                        <label asp-for="maHS" class="control-label"></label>
+                        <div class="input-group mb-2">
+                            <input asp-for="maHS" class="form-control" placeholder="Nhập mã" value="@Model.maHS" />
+                        </div>
+                        <span asp-validation-for="maHS" class="text-danger"></span>
+                    </div><!--end form-group-->
+                    <div class="form-group mb-2">
+                        <label asp-for="tenHS" class="control-label"></label>
+                        <div class="input-group mb-2">
+                            <input asp-for="tenHS" class="form-control" placeholder="Nhập tên" value="@Model.tenHS" />
+                        </div>
+                        <span asp-validation-for="tenHS" class="text-danger"></span>
+                    </div><!--end form-group-->
+                    <div class="form-group mb-2">
+                        <label asp-for="diachi" class="control-label"></label>
+                        <div class="input-group mb-2">
+                            <input asp-for="diachi" class="form-control" placeholder="Nhập địa chỉ" value="@Model.diachi" />
+                        </div>
+                        <span asp-validation-for="diachi" class="text-danger"></span>
+                    </div><!--end form-group-->
+                    <div class="form-group mb-2">
+                        <label asp-for="ngaysinh" class="control-label"></label>
+                        <div class="input-group mb-2">
+                            <input asp-for="ngaysinh" class="form-control" placeholder="Nhập ngày sinh" value="@Model.ngaysinh" />
+                        </div>
+                        <span asp-validation-for="ngaysinh" class="text-danger"></span>
+                    </div><!--end form-group-->
+                    <div class="form-group mb-2">
+                        <label asp-for="gioitinh" class="control-label"></label>
+                        <div class="input-group mb-2">
+                            <input asp-for="gioitinh" class="form-control" placeholder="Nhập giới tính" value="@Model.gioitinh" />
+                        </div>
+                        <span asp-validation-for="gioitinh" class="text-danger"></span>
+                    </div><!--end form-group-->
+            
+
+                    <div class="form-group">
+                        <br />
+                        <div class="col-md-12 offset-md-5">
+                            <div class="d-flex">
+                                <div style="margin-right:10px;">
+                                    <input type="submit" value="Submit" class="btn btn-primary btn-block" style="width:80px" />
+                                </div>
+                                <div>
+                                    <a asp-controller="HocSinh" asp-action="Index" class="btn btn-success text-white"><i class="fe-log-out"></i> Close</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div> <!-- end card-->
+</div>
+
+@section scripts{
+}
